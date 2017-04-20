@@ -23,5 +23,5 @@
         android:layout_alignStart="@+id/btn_cam"
         android:layout_below="@+id/btn_cam"
         android:layout_marginTop="105dp"
-        android:text="사진 가져오기" />
+        android:text="갤러리로 가기" />
 </RelativeLayout>
