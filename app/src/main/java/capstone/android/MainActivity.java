@@ -12,33 +12,22 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
+
     private static int PICK_IMAGE_REQUEST = 1;
     static final String TAG = "MainActivity";
 
     ImageView imgView;
-
-    Button cam = null;
     Button gallery = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        camgal();
+        setup();
     }
 
-    private void camgal() {
-        cam = (Button) findViewById(R.id.btn_cam);
+    private void setup() {
         gallery = (Button) findViewById(R.id.btn_gallery);
-
-        cam.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(intent, 1);
-            }
-        });
-
         gallery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +61,11 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this, "불러오지 못했습니다.", Toast.LENGTH_LONG).show();
             e.printStackTrace();
         }
+    }
+
+    public  void onClick_cam(View view){
+        Intent intent = new Intent(this, CaptureActivity.class);
+        startActivity(intent);
     }
 
     public void onClick_change(View view) {
