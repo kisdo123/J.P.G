@@ -12,7 +12,6 @@ import android.widget.ImageView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-
     private static int PICK_IMAGE_REQUEST = 1;
     static final String TAG = "MainActivity";
 
@@ -25,10 +24,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setup();
+        camgal();
     }
 
-    private void setup() {
+    private void camgal() {
         cam = (Button) findViewById(R.id.btn_cam);
         gallery = (Button) findViewById(R.id.btn_gallery);
 
