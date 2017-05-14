@@ -13,22 +13,24 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
+    private final long FINISH_INTERVAL_TIME = 2000;
+    private long backPressedTime = 0;
     private static int PICK_IMAGE_REQUEST = 1;
     static final String TAG = "MainActivity";
 
     ImageView imgView;
-    Button gallery = null;
+    Button btn_gallery = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        setup();
+        gallery();
     }
 
-    private void setup() {
-        gallery = (Button) findViewById(R.id.btn_gallery);
-        gallery.setOnClickListener(new View.OnClickListener() {
+    private void gallery() {
+        btn_gallery = (Button) findViewById(R.id.btn_gallery);
+        btn_gallery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
@@ -66,11 +68,29 @@ public class MainActivity extends AppCompatActivity {
     public  void onClick_cam(View view){
         Intent intent = new Intent(this, CaptureActivity.class);
         startActivity(intent);
+        finish();
     }
 
     public void onClick_change(View view) {
         Intent intent = new Intent(this, OcrActivity.class);
         startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed()
+    {
+        long tempTime = System.currentTimeMillis();
+        long intervalTime = tempTime - backPressedTime;
+        if (0 <= intervalTime && FINISH_INTERVAL_TIME >= intervalTime)
+        {
+            super.onBackPressed();
+        }
+        else
+        {
+            backPressedTime = tempTime;
+            Toast.makeText(getApplicationContext(), "한번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT).show();
+        }
+
     }
 
 }

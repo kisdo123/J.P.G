@@ -25,6 +25,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
+import android.view.Gravity;
 import android.view.Surface;
 import android.view.SurfaceView;
 import android.view.View;
@@ -47,6 +48,7 @@ public class CaptureActivity extends AppCompatActivity {
     Preview preview;
     Camera camera;
     Context ctx;
+    private Toast toast;
 
     private final static int PERMISSIONS_REQUEST_CODE = 100;
     private final static int CAMERA_FACING = Camera.CameraInfo.CAMERA_FACING_BACK;
@@ -58,22 +60,16 @@ public class CaptureActivity extends AppCompatActivity {
             if (c != null) {
                 PackageManager pm = c.getPackageManager();
                 if (pm != null) {
-                    Intent mStartActivity = pm.getLaunchIntentForPackage(
-                            c.getPackageName()
-                    );
+                    Intent mStartActivity = pm.getLaunchIntentForPackage(c.getPackageName());
                     if (mStartActivity != null) {
                         mStartActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
                         int mPendingIntentId = 223344;
-                        PendingIntent mPendingIntent = PendingIntent
-                                .getActivity(c, mPendingIntentId, mStartActivity,
-                                        PendingIntent.FLAG_CANCEL_CURRENT);
-                        AlarmManager mgr =
-                                (AlarmManager) c.getSystemService(Context.ALARM_SERVICE);
+                        PendingIntent mPendingIntent = PendingIntent.getActivity(c, mPendingIntentId, mStartActivity, PendingIntent.FLAG_CANCEL_CURRENT);
+                        AlarmManager mgr = (AlarmManager) c.getSystemService(Context.ALARM_SERVICE);
                         mgr.set(AlarmManager.RTC, System.currentTimeMillis() + 100, mPendingIntent);
                         System.exit(0);
                     } else {
-                        Log.e(TAG, "Was not able to restart application, " +
-                                "mStartActivity null");
+                        Log.e(TAG, "Was not able to restart application, " + "mStartActivity null");
                     }
                 } else {
                     Log.e(TAG, "Was not able to restart application, PM null");
@@ -90,8 +86,7 @@ public class CaptureActivity extends AppCompatActivity {
 
         if ( preview == null ) {
             preview = new Preview(this, (SurfaceView) findViewById(R.id.surfaceView));
-            preview.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT,
-                    ViewGroup.LayoutParams.MATCH_PARENT));
+            preview.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
             ((FrameLayout) findViewById(R.id.layout)).addView(preview);
             preview.setKeepScreenOn(true);
         }
@@ -105,25 +100,20 @@ public class CaptureActivity extends AppCompatActivity {
         int numCams = Camera.getNumberOfCameras();
         if (numCams > 0) {
             try {
-
                 camera = Camera.open(CAMERA_FACING);
-                camera.setDisplayOrientation(setCameraDisplayOrientation(this, CAMERA_FACING,
-                        camera));
+                camera.setDisplayOrientation(setCameraDisplayOrientation(this, CAMERA_FACING, camera));
                 Camera.Parameters params = camera.getParameters();
                 params.setRotation(setCameraDisplayOrientation(this, CAMERA_FACING, camera));
                 camera.startPreview();
 
-
             } catch (RuntimeException ex) {
-                Toast.makeText(ctx, "camera_not_found " + ex.getMessage().toString(),
-                        Toast.LENGTH_LONG).show();
+                toast.makeText(ctx, "camera_not_found " + ex.getMessage().toString(), toast.LENGTH_LONG).show();
                 Log.d(TAG, "camera_not_found " + ex.getMessage().toString());
             }
         }
 
         preview.setCamera(camera);
     }
-
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -140,7 +130,12 @@ public class CaptureActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 camera.takePicture(shutterCallback, rawCallback, jpegCallback);
-                Toast.makeText(getApplicationContext(), "사진찍기 완료", Toast.LENGTH_SHORT).show();
+                toast = Toast.makeText(getApplicationContext(), "사진을 찍습니다.", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 50, 50);
+                toast.show();
+                toast = Toast.makeText(getApplicationContext(), "사진이 저장되었습니다.", Toast.LENGTH_LONG);
+                toast.setGravity(Gravity.CENTER, 50, 50);
+                toast.show();
             }
         });
 
@@ -148,27 +143,17 @@ public class CaptureActivity extends AppCompatActivity {
         if (getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
 
             if (Build.VERSION.SDK_INT >= M) {
-
-                int hasCameraPermission = ContextCompat.checkSelfPermission(this,
-                        Manifest.permission.CAMERA);
-                int hasWriteExternalStoragePermission =
-                        ContextCompat.checkSelfPermission(this,
-                                Manifest.permission.WRITE_EXTERNAL_STORAGE);
-
-                if ( hasCameraPermission == PackageManager.PERMISSION_GRANTED
-                        && hasWriteExternalStoragePermission==PackageManager.PERMISSION_GRANTED){
+                int hasCameraPermission = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
+                int hasWriteExternalStoragePermission = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                if ( hasCameraPermission == PackageManager.PERMISSION_GRANTED && hasWriteExternalStoragePermission==PackageManager.PERMISSION_GRANTED){
                 } else {
-                    ActivityCompat.requestPermissions( this,
-                            new String[]{Manifest.permission.CAMERA,
-                                    Manifest.permission.WRITE_EXTERNAL_STORAGE},
-                            PERMISSIONS_REQUEST_CODE);
+                    ActivityCompat.requestPermissions( this, new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSIONS_REQUEST_CODE);
                 }
             } else{
                 ;
             }
         } else {
-            Toast.makeText(CaptureActivity.this, "Camera not supported",
-                    Toast.LENGTH_LONG).show();
+            toast.makeText(CaptureActivity.this, "Camera not supported", Toast.LENGTH_LONG).show();
         }
     }
 
@@ -190,19 +175,23 @@ public class CaptureActivity extends AppCompatActivity {
         ((FrameLayout) findViewById(R.id.layout)).removeView(preview);
         preview = null;
     }
+
     private void resetCam() {
         startCamera();
     }
+
     private void refreshGallery(File file) {
         Intent mediaScanIntent = new Intent( Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
         mediaScanIntent.setData(Uri.fromFile(file));
         sendBroadcast(mediaScanIntent);
     }
+
     Camera.ShutterCallback shutterCallback = new Camera.ShutterCallback() {
         public void onShutter() {
             Log.d(TAG, "onShutter'd");
         }
     };
+
     Camera.PictureCallback rawCallback = new Camera.PictureCallback() {
         public void onPictureTaken(byte[] data, Camera camera) {
             Log.d(TAG, "onPictureTaken - raw");
@@ -241,7 +230,7 @@ public class CaptureActivity extends AppCompatActivity {
 
             try {
                 File sdCard = Environment.getExternalStorageDirectory();
-                File dir = new File (sdCard.getAbsolutePath() + "/camtest");
+                File dir = new File (sdCard.getAbsolutePath() + "/J.P.G");
                 dir.mkdirs();
 
                 String fileName = String.format("%d.jpg", System.currentTimeMillis());
@@ -375,5 +364,6 @@ public class CaptureActivity extends AppCompatActivity {
     public void onClick_back (View view){
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
+        finish();
     }
 }

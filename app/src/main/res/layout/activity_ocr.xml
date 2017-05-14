@@ -8,20 +8,26 @@
     tools:context="capstone.android.OcrActivity">
 
     <Button
+        android:textColor="#F3CF55"
+        android:background="#000000"
         android:id="@+id/button1"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:text="변환하기"
+        android:textStyle="bold"
         android:layout_alignBaseline="@+id/button2"
         android:layout_alignBottom="@+id/button2"
         android:layout_alignParentStart="true"
         android:layout_marginStart="30dp" />
 
     <Button
+        android:textColor="#F3CF55"
+        android:background="#000000"
         android:id="@+id/button2"
         android:layout_width="120dp"
         android:layout_height="wrap_content"
         android:text="편집하기"
+        android:textStyle="bold"
         android:layout_marginTop="50dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
@@ -30,20 +36,25 @@
     <TextView
         android:id="@+id/textView1"
         android:background="@drawable/xml_border"
-        android:layout_width="200dp"
-        android:layout_height="270dp"
+        android:layout_width="300dp"
+        android:layout_height="330dp"
         android:layout_alignStart="@+id/button1"
         android:layout_below="@+id/button1"
         android:layout_marginTop="30dp"
         android:text="TextView"
+        android:textColor="#000000"
+        android:textStyle="bold"
         android:scrollbars="vertical"
         android:layout_alignEnd="@+id/button2" />
 
     <Button
+        android:textColor="#F3CF55"
+        android:background="#000000"
         android:id="@+id/button8"
         android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:text="끝내기"
+        android:textStyle="bold"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="30dp" />

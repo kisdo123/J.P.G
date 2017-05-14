@@ -28,7 +28,6 @@ class Preview extends ViewGroup implements SurfaceHolder.Callback {
         mHolder = mSurfaceView.getHolder();
         mHolder.addCallback(this);
         mHolder.setType(SurfaceHolder.SURFACE_TYPE_PUSH_BUFFERS);
-
     }
 
     public void setCamera(Camera camera) {
@@ -37,6 +36,7 @@ class Preview extends ViewGroup implements SurfaceHolder.Callback {
             mCamera.release();
             mCamera = null;
         }
+
         mCamera = camera;
         if (mCamera != null) {
             List<Camera.Size> localSizes = mCamera.getParameters().getSupportedPreviewSizes();
@@ -44,6 +44,7 @@ class Preview extends ViewGroup implements SurfaceHolder.Callback {
             requestLayout();
             Camera.Parameters params = mCamera.getParameters();
             List<String> focusModes = params.getSupportedFocusModes();
+
             if (focusModes.contains(Camera.Parameters.FOCUS_MODE_AUTO)) {
                 params.setFocusMode(Camera.Parameters.FOCUS_MODE_AUTO);
                 mCamera.setParameters(params);

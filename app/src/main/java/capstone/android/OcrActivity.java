@@ -15,4 +15,5 @@ public class OcrActivity extends AppCompatActivity
         TextView textView = (TextView)findViewById(R.id.textView1);
         textView.setMovementMethod(new ScrollingMovementMethod());
     }
+
 }
