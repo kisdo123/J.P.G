@@ -1,11 +1,13 @@
 package capstone.android;
 
 import android.content.Intent;
+import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,16 +18,20 @@ public class MainActivity extends AppCompatActivity {
     private final long FINISH_INTERVAL_TIME = 2000;
     private long backPressedTime = 0;
     private static int PICK_IMAGE_REQUEST = 1;
+    private String ImagePath = null;
     static final String TAG = "MainActivity";
-
     ImageView imgView;
-    Button btn_gallery = null;
+    Button btn_gallery;
+    Button btn_cam;
+    Button btn_change;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         gallery();
+        Cam();
+        Change();
     }
 
     private void gallery() {
@@ -39,13 +45,38 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
+    private void Cam(){
+        btn_cam = (Button)findViewById(R.id.btn_cam);
+        btn_cam.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(MainActivity.this, CaptureActivity.class);
+                startActivity(intent);
+                finish();
+            }
+        });
+    }
+
+    private void Change(){
+        btn_change = (Button)findViewById(R.id.btn_change);
+        btn_change.setOnClickListener(new View.OnClickListener(){
+            @Override
+            public void onClick(View v){
+                Intent intent = new Intent(MainActivity.this, OcrActivity.class);
+                intent.putExtra("ImagePath",ImagePath);
+                Log.d("CheckPoint2","이미지 경로 확인"+ImagePath);
+                startActivity(intent);
+            }
+        });
+    }
 
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         try {
             if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && null != data) {
                 Uri uri = data.getData();
-
+                ImagePath = uri_path(uri);
+                Log.d("CheckPoint1","이미지 절대 경로 : "+ImagePath);
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
                 int nh = (int) (bitmap.getHeight() * (1024.0 / bitmap.getWidth()));
                 Bitmap scaled = Bitmap.createScaledBitmap(bitmap, 1024, nh, true);
@@ -64,18 +95,6 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
     }
-
-    public  void onClick_cam(View view){
-        Intent intent = new Intent(this, CaptureActivity.class);
-        startActivity(intent);
-        finish();
-    }
-
-    public void onClick_change(View view) {
-        Intent intent = new Intent(this, OcrActivity.class);
-        startActivity(intent);
-    }
-
     @Override
     public void onBackPressed()
     {
@@ -93,4 +112,15 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
+    private String uri_path(Uri uri){
+        String res = null;
+        String[] image_data = { MediaStore.Images.Media.DATA };
+        Cursor cur = getContentResolver().query(uri, image_data, null, null, null);
+        if(cur.moveToFirst()){
+            int col = cur.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
+            res = cur.getString(col);
+        }
+        cur.close();
+        return res;
+    }
 }
