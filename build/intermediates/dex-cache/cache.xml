@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="509a5e57920f7e232ac531bb332c1a135a3492d9">
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run-bootstrap_190e294c9f2ba20d698902cde13814e8a93052cf\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\captstone\J.P.G\app\libs\xmlbeans-2.6.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="70d464a4f4bf8bdf94f1a7d536961784feb2646e">
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\2\xmlbeans-2.6.0_e96e1f18cf2c6f6ced0f02c4d78cc626fa9e85fe\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="D:\Androidsdk\sdk1\extras\android\m2repository\com\android\support\support-annotations\25.0.0\support-annotations-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-25.0.0_386c5d3898f4e29a7e3aa2f91164faea14925490\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\captstone\J.P.G\app\libs\commons-codec-1.10.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4b95f4897fa13f2cd904aee711aeafc0c5295cd8">
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\2\commons-codec-1.10_0c5a3516020d25092bda2f993127dff16c8fd7b2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\captstone\J.P.G\app\libs\commons-codec-1.10.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4b95f4897fa13f2cd904aee711aeafc0c5295cd8">
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\2\commons-codec-1.10_0c5a3516020d25092bda2f993127dff16c8fd7b2\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\captstone\J.P.G\app\libs\poi-3.16.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ad21c123ee5d6b5b2a8f0d4ed23b3ffe6759a889">
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\2\poi-3.16_bbbfe75d4e521c539a7da4eabd4108662b6002f1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\captstone\J.P.G\app\libs\commons-logging-1.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4bfc12adfe4842bf07b657f0369c4cb522955686">
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\2\commons-logging-1.2_e87804f071bf9d30c2aa9ffc9c8ef037bb859a52\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\captstone\J.P.G\app\libs\commons-logging-1.2.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="4bfc12adfe4842bf07b657f0369c4cb522955686">
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\2\commons-logging-1.2_e87804f071bf9d30c2aa9ffc9c8ef037bb859a52\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\captstone\J.P.G\app\libs\poi-scratchpad-3.16.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="69d6dda524e38a491b362d0f94ef74a514faf70a">
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\2\poi-scratchpad-3.16_1550545c4a7d41e63bf8a747be36ad4ed7766225\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\captstone\J.P.G\app\libs\poi-3.16.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="ad21c123ee5d6b5b2a8f0d4ed23b3ffe6759a889">
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\2\poi-3.16_bbbfe75d4e521c539a7da4eabd4108662b6002f1\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\captstone\J.P.G\app\libs\log4j-1.2.17.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="5af35056b4d257e4b64b9e8069c0746e8b08629f">
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\2\log4j-1.2.17_6ae38db761fdf869d6e88c132980e571f3885ecb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\captstone\J.P.G\app\libs\poi-scratchpad-3.16.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="69d6dda524e38a491b362d0f94ef74a514faf70a">
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\2\poi-scratchpad-3.16_1550545c4a7d41e63bf8a747be36ad4ed7766225\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\captstone\J.P.G\app\libs\poi-ooxml-3.16.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="76e20fe22404cc4da55ddfdaaaadee32bbfa3bdd">
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\2\poi-ooxml-3.16_863f5dd6a3dd9b2fb119a06f20129d19cc89493e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\captstone\J.P.G\app\libs\curvesapi-1.04.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3386abf821719bc89c7685f9eaafaf4a842f0199">
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\2\curvesapi-1.04_aa407d6b90c3054fd33eccbdb004008631e77d17\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\captstone\J.P.G\app\libs\log4j-1.2.17.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="5af35056b4d257e4b64b9e8069c0746e8b08629f">
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\2\log4j-1.2.17_6ae38db761fdf869d6e88c132980e571f3885ecb\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="caff8e51a24901cfc9cd7e1cf83d84f4cb0c103b">
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\10000\instant-run_e88fcf9d2cd3fe1c3ba1f0cc94588f28a01d68d0\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\captstone\J.P.G\app\libs\junit-4.12.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2973d150c0dc1fefe998f834810d68f278ea58ec">
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\2\junit-4.12_5d95206276a27db179116abe703393ed4d82bd04\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\captstone\J.P.G\app\libs\poi-ooxml-schemas-3.16.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9828a49307fc6bebfd42185b677d88b6e4994c63">
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\2\poi-ooxml-schemas-3.16_512d3de52df1b9ca20d40d82f51ab73102f4ba3a\classes.dex" />
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\2\poi-ooxml-schemas-3.16_512d3de52df1b9ca20d40d82f51ab73102f4ba3a\classes2.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\captstone\J.P.G\app\libs\xmlbeans-2.6.0.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="70d464a4f4bf8bdf94f1a7d536961784feb2646e">
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\2\xmlbeans-2.6.0_e96e1f18cf2c6f6ced0f02c4d78cc626fa9e85fe\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\captstone\J.P.G\app\libs\poi-ooxml-schemas-3.16.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="9828a49307fc6bebfd42185b677d88b6e4994c63">
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\2\poi-ooxml-schemas-3.16_512d3de52df1b9ca20d40d82f51ab73102f4ba3a\classes.dex" />
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\2\poi-ooxml-schemas-3.16_512d3de52df1b9ca20d40d82f51ab73102f4ba3a\classes2.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\captstone\J.P.G\app\libs\commons-collections4-4.1.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a4cf4688fe1c7e3a63aa636cc96d013af537768e">
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\2\commons-collections4-4.1_11785baeb60787951db400ed8f4cf327e5f00370\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\captstone\J.P.G\app\libs\poi-ooxml-3.16.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="76e20fe22404cc4da55ddfdaaaadee32bbfa3bdd">
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\2\poi-ooxml-3.16_863f5dd6a3dd9b2fb119a06f20129d19cc89493e\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\captstone\J.P.G\app\libs\curvesapi-1.04.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="25.0.3"
+        sha1="3386abf821719bc89c7685f9eaafaf4a842f0199">
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\2\curvesapi-1.04_aa407d6b90c3054fd33eccbdb004008631e77d17\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\captstone\J.P.G\app\libs\junit-4.12.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="2973d150c0dc1fefe998f834810d68f278ea58ec">
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\2\junit-4.12_5d95206276a27db179116abe703393ed4d82bd04\classes.dex" />
+    </item>
+    <item
+        is-multidex="true"
+        jar="C:\Users\User\Desktop\captstone\J.P.G\app\libs\commons-collections4-4.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.3"
+        sha1="a4cf4688fe1c7e3a63aa636cc96d013af537768e">
+        <dex dex="C:\Users\User\Desktop\captstone\J.P.G\app\build\intermediates\transforms\dex\debug\folders\1000\2\commons-collections4-4.1_11785baeb60787951db400ed8f4cf327e5f00370\classes.dex" />
+    </item>
+
+</items>
