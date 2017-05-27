@@ -32,7 +32,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.FrameLayout;
+import android.support.constraint.ConstraintLayout;
 import android.widget.Toast;
 
 import java.io.ByteArrayOutputStream;
@@ -87,7 +87,7 @@ public class CaptureActivity extends AppCompatActivity {
         if ( preview == null ) {
             preview = new Preview(this, (SurfaceView) findViewById(R.id.surfaceView));
             preview.setLayoutParams(new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT));
-            ((FrameLayout) findViewById(R.id.layout)).addView(preview);
+            ((ConstraintLayout) findViewById(R.id.layout)).addView(preview);
             preview.setKeepScreenOn(true);
         }
 
@@ -125,36 +125,6 @@ public class CaptureActivity extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
         setContentView(R.layout.activity_camera);
 
-        Button button = (Button)findViewById(R.id.btnCapture);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                camera.takePicture(shutterCallback, rawCallback, jpegCallback);
-                toast = Toast.makeText(getApplicationContext(), "사진을 찍습니다.", Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.CENTER, 50, 50);
-                toast.show();
-                toast = Toast.makeText(getApplicationContext(), "사진이 저장되었습니다.", Toast.LENGTH_LONG);
-                toast.setGravity(Gravity.CENTER, 50, 50);
-                toast.show();
-            }
-        });
-
-
-        if (getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
-
-            if (Build.VERSION.SDK_INT >= M) {
-                int hasCameraPermission = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
-                int hasWriteExternalStoragePermission = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
-                if ( hasCameraPermission == PackageManager.PERMISSION_GRANTED && hasWriteExternalStoragePermission==PackageManager.PERMISSION_GRANTED){
-                } else {
-                    ActivityCompat.requestPermissions( this, new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSIONS_REQUEST_CODE);
-                }
-            } else{
-                ;
-            }
-        } else {
-            toast.makeText(CaptureActivity.this, "Camera not supported", Toast.LENGTH_LONG).show();
-        }
     }
 
     @Override
@@ -172,7 +142,7 @@ public class CaptureActivity extends AppCompatActivity {
             camera.release();
             camera = null;
         }
-        ((FrameLayout) findViewById(R.id.layout)).removeView(preview);
+        ((ConstraintLayout) findViewById(R.id.layout)).removeView(preview);
         preview = null;
     }
 
@@ -365,5 +335,30 @@ public class CaptureActivity extends AppCompatActivity {
         Intent intent = new Intent(this,MainActivity.class);
         startActivity(intent);
         finish();
+    }
+    public void onClick_cam(View v) {
+        camera.takePicture(shutterCallback, rawCallback, jpegCallback);
+        toast = Toast.makeText(getApplicationContext(), "사진을 찍습니다.", Toast.LENGTH_SHORT);
+        toast.setGravity(Gravity.CENTER, 50, 50);
+        toast.show();
+        toast = Toast.makeText(getApplicationContext(), "사진이 저장되었습니다.", Toast.LENGTH_LONG);
+        toast.setGravity(Gravity.CENTER, 50, 50);
+        toast.show();
+
+        if (getPackageManager().hasSystemFeature(PackageManager.FEATURE_CAMERA)) {
+
+            if (Build.VERSION.SDK_INT >= M) {
+                int hasCameraPermission = ContextCompat.checkSelfPermission(this, Manifest.permission.CAMERA);
+                int hasWriteExternalStoragePermission = ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE);
+                if ( hasCameraPermission == PackageManager.PERMISSION_GRANTED && hasWriteExternalStoragePermission==PackageManager.PERMISSION_GRANTED){
+                } else {
+                    ActivityCompat.requestPermissions( this, new String[]{Manifest.permission.CAMERA, Manifest.permission.WRITE_EXTERNAL_STORAGE}, PERMISSIONS_REQUEST_CODE);
+                }
+            } else{
+                ;
+            }
+        } else {
+            toast.makeText(CaptureActivity.this, "Camera not supported", Toast.LENGTH_LONG).show();
+        }
     }
 }

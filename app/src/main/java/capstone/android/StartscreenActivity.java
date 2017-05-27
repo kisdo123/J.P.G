@@ -13,13 +13,12 @@ public class StartscreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
         Handler handler = new Handler() {
-            public void handleMessage(Message msg) {
-                super.handleMessage(msg);
-                startActivity(new Intent(StartscreenActivity.this, MainActivity.class));
-                finish();
-            }
+public void handleMessage(Message msg) {
+        super.handleMessage(msg);
+        startActivity(new Intent(StartscreenActivity.this, MainActivity.class));
+        finish();
+        }
         };
         handler.sendEmptyMessageDelayed(0, 2000);
-    }
+        }
 }
-

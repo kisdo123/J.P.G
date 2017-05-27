@@ -15,9 +15,9 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
-    private final long FINISH_INTERVAL_TIME = 2000;
-    private long backPressedTime = 0;
+    private BackPressCloseHandler backPressCloseHandler;
     private static int PICK_IMAGE_REQUEST = 1;
+    private Cursor cur = null;
     private String ImagePath = null;
     static final String TAG = "MainActivity";
     ImageView imgView;
@@ -29,6 +29,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        backPressCloseHandler = new BackPressCloseHandler(this);
         gallery();
         Cam();
         Change();
@@ -52,7 +53,6 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v){
                 Intent intent = new Intent(MainActivity.this, CaptureActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
     }
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
         try {
             if (requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && null != data) {
                 Uri uri = data.getData();
-                ImagePath = uri_path(uri);
+                ImagePath = getImageApath(uri);
                 Log.d("CheckPoint1","이미지 절대 경로 : "+ImagePath);
                 Bitmap bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), uri);
                 int nh = (int) (bitmap.getHeight() * (1024.0 / bitmap.getWidth()));
@@ -96,31 +96,16 @@ public class MainActivity extends AppCompatActivity {
         }
     }
     @Override
-    public void onBackPressed()
-    {
-        long tempTime = System.currentTimeMillis();
-        long intervalTime = tempTime - backPressedTime;
-        if (0 <= intervalTime && FINISH_INTERVAL_TIME >= intervalTime)
-        {
-            super.onBackPressed();
-        }
-        else
-        {
-            backPressedTime = tempTime;
-            Toast.makeText(getApplicationContext(), "한번 더 누르면 종료됩니다.", Toast.LENGTH_SHORT).show();
-        }
-
+    public void onBackPressed() {
+        backPressCloseHandler.onBackPressed();
     }
 
-    private String uri_path(Uri uri){
-        String res = null;
-        String[] image_data = { MediaStore.Images.Media.DATA };
-        Cursor cur = getContentResolver().query(uri, image_data, null, null, null);
-        if(cur.moveToFirst()){
-            int col = cur.getColumnIndexOrThrow(MediaStore.Images.Media.DATA);
-            res = cur.getString(col);
-        }
-        cur.close();
-        return res;
+    private String getImageApath(Uri Rpath){
+        String[] filePathColumn = { MediaStore.Images.Media.DATA };
+        Cursor cursor = getContentResolver().query(Rpath, filePathColumn, null, null, null);
+        cursor.moveToFirst();
+        int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
+        String picturePath = cursor.getString(columnIndex);
+        return picturePath;
     }
 }

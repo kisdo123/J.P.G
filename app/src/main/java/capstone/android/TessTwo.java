@@ -38,7 +38,9 @@ public class TessTwo {
         this.context = context;
         datapath = Environment.getExternalStorageDirectory() + "/ocrctz/";
         File dir = new File(datapath + "/tessdata/");
-        File file = new File(datapath + "/tessdata/" + "eng.traineddata");
+        Log.d("CheckPoint3","tessdata파일경로 :"+dir.getPath());
+        File file = new File(datapath + "/tessdata/" + "tessdata/eng.traineddata");
+        Log.d("CheckPoint4","eng.traindata :"+file.getPath());
         if (!file.exists()) {
             Log.d("mylog", "in file doesn't exist");
             dir.mkdirs();
