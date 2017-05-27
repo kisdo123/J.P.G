@@ -1,0 +1,7 @@
+#Sat May 27 05:44:56 KST 2017
+base.0=C\:\\Users\\User\\Desktop\\captstone\\J.P.G\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_190e294c9f2ba20d698902cde13814e8a93052cf
+renamed.1=classes.dex
+renamed.0=classes2.dex
+file.1=C\:\\Users\\User\\Desktop\\captstone\\J.P.G\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_e88fcf9d2cd3fe1c3ba1f0cc94588f28a01d68d0\\classes.dex
+base.1=C\:\\Users\\User\\Desktop\\captstone\\J.P.G\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run_e88fcf9d2cd3fe1c3ba1f0cc94588f28a01d68d0
+file.0=C\:\\Users\\User\\Desktop\\captstone\\J.P.G\\app\\build\\intermediates\\transforms\\dex\\debug\\folders\\1000\\10000\\instant-run-bootstrap_190e294c9f2ba20d698902cde13814e8a93052cf\\classes.dex
