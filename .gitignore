@@ -1,4 +1,4 @@
-/tess-two
-/build
-/etc(Not project file)
-/gradle
+tess-two/
+build/
+etc(Not project file)/
+gradle/
