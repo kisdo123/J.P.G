@@ -1,1 +1,1 @@
-include ':app', ':tess-two'
+include ':app', ':tess-two', ':jpresentation-1.0'

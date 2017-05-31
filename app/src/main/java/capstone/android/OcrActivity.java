@@ -12,6 +12,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import java.io.File;
+
 public class OcrActivity extends AppCompatActivity {
     private TextView textView;
     private Button button;
@@ -59,9 +61,14 @@ public class OcrActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 try {
+                    File sdCard = Environment.getExternalStorageDirectory();
+                    File dir = new File (sdCard.getAbsolutePath() + "/J.P.G");
+                    dir.mkdirs();
                     ppt = new PptBuilder();
                     Log.d("CheckPoint4_1", "PptBuilder 생성: " + (ppt != null));
                     ppt.MakeSlideLayout(temp, Environment.getExternalStorageDirectory().getAbsolutePath() + "/J.P.G/");
+                    moveTaskToBack(true);
+                    finish();
                     android.os.Process.killProcess(android.os.Process.myPid());
                 } catch (Exception e) {
                     e.printStackTrace();

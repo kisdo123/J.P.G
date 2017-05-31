@@ -13,10 +13,10 @@ ADDED from C:\Users\User\Desktop\captstone\J.P.G\app\src\main\AndroidManifest.xm
 	android:versionCode
 		INJECTED from C:\Users\User\Desktop\captstone\J.P.G\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\User\Desktop\captstone\J.P.G\app\src\main\AndroidManifest.xml
-uses-feature#android.hardware.camera2
-ADDED from C:\Users\User\Desktop\captstone\J.P.G\app\src\main\AndroidManifest.xml:4:5-61
+uses-feature#android.hardware.camera
+ADDED from C:\Users\User\Desktop\captstone\J.P.G\app\src\main\AndroidManifest.xml:4:5-60
 	android:name
-		ADDED from C:\Users\User\Desktop\captstone\J.P.G\app\src\main\AndroidManifest.xml:4:19-58
+		ADDED from C:\Users\User\Desktop\captstone\J.P.G\app\src\main\AndroidManifest.xml:4:19-57
 uses-permission#android.permission.CAMERA
 ADDED from C:\Users\User\Desktop\captstone\J.P.G\app\src\main\AndroidManifest.xml:5:5-65
 	android:name
@@ -83,6 +83,7 @@ ADDED from C:\Users\User\Desktop\captstone\J.P.G\app\src\main\AndroidManifest.xm
 		ADDED from C:\Users\User\Desktop\captstone\J.P.G\app\src\main\AndroidManifest.xml:25:19-50
 uses-sdk
 INJECTED from C:\Users\User\Desktop\captstone\J.P.G\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
+MERGED from [com.android.support:multidex:1.0.1] C:\Users\User\.android\build-cache\0dba30d36d94353ca31fddcbf9e854ea3254b636\output\AndroidManifest.xml:18:5-42
 MERGED from [com.android.support:appcompat-v7:25.0.0] C:\Users\User\.android\build-cache\d85ab606f4988eb1188c5a268bbe3f13d6c0e1b4\output\AndroidManifest.xml:21:5-23:78
 MERGED from [com.android.support:support-v4:25.0.0] C:\Users\User\.android\build-cache\8d824a88e01e9ead9a91c2a54b9685d5156eda10\output\AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-fragment:25.0.0] C:\Users\User\.android\build-cache\5a79a87ba5fab52de50ac32f97f360687af06105\output\AndroidManifest.xml:21:5-23:60

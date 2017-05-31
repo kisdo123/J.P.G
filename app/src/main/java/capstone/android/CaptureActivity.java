@@ -18,6 +18,7 @@ import android.os.AsyncTask;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
+import android.provider.MediaStore;
 import android.provider.Settings;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
@@ -199,12 +200,8 @@ public class CaptureActivity extends AppCompatActivity {
             FileOutputStream outStream = null;
 
             try {
-                File sdCard = Environment.getExternalStorageDirectory();
-                File dir = new File (sdCard.getAbsolutePath() + "/J.P.G");
-                dir.mkdirs();
-
                 String fileName = String.format("%d.jpg", System.currentTimeMillis());
-                File outFile = new File(dir, fileName);
+                File outFile = new File("/storage/emulated/0/DCIM/Camera/", fileName);
 
                 outStream = new FileOutputStream(outFile);
                 outStream.write(data[0]);
