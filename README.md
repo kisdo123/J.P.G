@@ -11,3 +11,7 @@ IDE
 
 프로그램 기능
 >OCR,OOXML
+
+using the libraries
+>tess-two	https://github.com/rmtheis/tess-two
+>Jpresentation  http://www.independentsoft.de/index.html
