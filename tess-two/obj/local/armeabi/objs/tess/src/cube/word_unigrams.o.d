@@ -1,8 +1,8 @@
 ./obj/local/armeabi/objs/tess/src/cube/word_unigrams.o: \
   jni/com_googlecode_tesseract_android/src/cube/word_unigrams.cpp \
-  D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string \
-  D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector \
-  D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
+  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string \
+  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector \
+  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
   jni/com_googlecode_tesseract_android/src/cutil\const.h \
   jni/com_googlecode_tesseract_android/src/cube/cube_utils.h \
   jni/com_googlecode_leptonica_android/src/src\allheaders.h \
@@ -62,11 +62,11 @@
   jni/com_googlecode_tesseract_android/src/cube/char_altlist.h \
   jni/com_googlecode_tesseract_android/src/cube/altlist.h
 
-D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string:
+D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string:
 
-D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector:
+D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector:
 
-D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
+D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
 
 jni/com_googlecode_tesseract_android/src/cutil\const.h:
 

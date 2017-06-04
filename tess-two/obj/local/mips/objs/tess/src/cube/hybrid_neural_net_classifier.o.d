@@ -1,6 +1,6 @@
 ./obj/local/mips/objs/tess/src/cube/hybrid_neural_net_classifier.o: \
   jni/com_googlecode_tesseract_android/src/cube/hybrid_neural_net_classifier.cpp \
-  D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
+  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
   jni/com_googlecode_tesseract_android/src/cube/classifier_base.h \
   jni/com_googlecode_tesseract_android/src/cube/char_samp.h \
   jni/com_googlecode_tesseract_android/src/cube/bmp_8.h \
@@ -106,7 +106,7 @@
   jni/com_googlecode_tesseract_android/src/ccstruct\params_training_featdef.h \
   jni/com_googlecode_tesseract_android/src/cube/tess_lang_mod_edge.h
 
-D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
+D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
 
 jni/com_googlecode_tesseract_android/src/cube/classifier_base.h:
 

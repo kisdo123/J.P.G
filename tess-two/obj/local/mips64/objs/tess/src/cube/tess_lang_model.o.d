@@ -1,13 +1,13 @@
 ./obj/local/mips64/objs/tess/src/cube/tess_lang_model.o: \
   jni/com_googlecode_tesseract_android/src/cube/tess_lang_model.cpp \
-  D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string \
-  D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector \
+  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string \
+  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector \
   jni/com_googlecode_tesseract_android/src/cube/char_samp.h \
   jni/com_googlecode_tesseract_android/src/cube/bmp_8.h \
   jni/com_googlecode_tesseract_android/src/cube/con_comp.h \
   jni/com_googlecode_tesseract_android/src/cube/cached_file.h \
   jni/com_googlecode_tesseract_android/src/cube/string_32.h \
-  D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
+  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
   jni/com_googlecode_tesseract_android/src/cube/cube_utils.h \
   jni/com_googlecode_leptonica_android/src/src\allheaders.h \
   jni/com_googlecode_leptonica_android/src/src/alltypes.h \
@@ -111,9 +111,9 @@
   jni/com_googlecode_tesseract_android/src/ccstruct\ccstruct.h \
   jni/com_googlecode_tesseract_android/src/textord/bbgrid.h \
   jni/com_googlecode_tesseract_android/src/ccutil\hashfn.h \
-  D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_map \
-  D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_set \
-  D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\memory \
+  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_map \
+  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_set \
+  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\memory \
   jni/com_googlecode_tesseract_android/src/ccstruct\blobbox.h \
   jni/com_googlecode_tesseract_android/src/textord/gap_map.h \
   jni/com_googlecode_tesseract_android/src/wordrec\wordrec.h \
@@ -164,9 +164,9 @@
   jni/com_googlecode_tesseract_android/src/cube\word_unigrams.h \
   jni/com_googlecode_tesseract_android/src/cube/tess_lang_mod_edge.h
 
-D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string:
+D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string:
 
-D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector:
+D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector:
 
 jni/com_googlecode_tesseract_android/src/cube/char_samp.h:
 
@@ -178,7 +178,7 @@ jni/com_googlecode_tesseract_android/src/cube/cached_file.h:
 
 jni/com_googlecode_tesseract_android/src/cube/string_32.h:
 
-D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
+D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
 
 jni/com_googlecode_tesseract_android/src/cube/cube_utils.h:
 
@@ -386,11 +386,11 @@ jni/com_googlecode_tesseract_android/src/textord/bbgrid.h:
 
 jni/com_googlecode_tesseract_android/src/ccutil\hashfn.h:
 
-D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_map:
+D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_map:
 
-D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_set:
+D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_set:
 
-D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\memory:
+D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\memory:
 
 jni/com_googlecode_tesseract_android/src/ccstruct\blobbox.h:
 

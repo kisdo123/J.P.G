@@ -1,9 +1,9 @@
 ./obj/local/armeabi/objs/tess/src/ccmain/cube_reco_context.o: \
   jni/com_googlecode_tesseract_android/src/ccmain/cube_reco_context.cpp \
-  D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string \
+  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string \
   jni/com_googlecode_tesseract_android/src/ccmain/cube_reco_context.h \
   jni/com_googlecode_tesseract_android/src/neural_networks/runtime\neural_net.h \
-  D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector \
+  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector \
   jni/com_googlecode_tesseract_android/src/neural_networks/runtime/neuron.h \
   jni/com_googlecode_tesseract_android/src/neural_networks/runtime/input_file_buffer.h \
   jni/com_googlecode_tesseract_android/src/cube\lang_model.h \
@@ -11,7 +11,7 @@
   jni/com_googlecode_tesseract_android/src/cube/cube_tuning_params.h \
   jni/com_googlecode_tesseract_android/src/cube/tuning_params.h \
   jni/com_googlecode_tesseract_android/src/cube/char_set.h \
-  D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
+  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
   jni/com_googlecode_tesseract_android/src/cube/string_32.h \
   jni/com_googlecode_tesseract_android/src/ccutil\tessdatamanager.h \
   jni/com_googlecode_tesseract_android/src/ccutil/host.h \
@@ -128,9 +128,9 @@
   jni/com_googlecode_tesseract_android/src/ccstruct\ccstruct.h \
   jni/com_googlecode_tesseract_android/src/textord/bbgrid.h \
   jni/com_googlecode_tesseract_android/src/ccutil\hashfn.h \
-  D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_map \
-  D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_set \
-  D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\memory \
+  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_map \
+  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_set \
+  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\memory \
   jni/com_googlecode_tesseract_android/src/ccstruct\blobbox.h \
   jni/com_googlecode_tesseract_android/src/textord/gap_map.h \
   jni/com_googlecode_tesseract_android/src/wordrec\wordrec.h \
@@ -166,13 +166,13 @@
   jni/com_googlecode_tesseract_android/src/cube\tess_lang_model.h \
   jni/com_googlecode_tesseract_android/src/cube/tess_lang_mod_edge.h
 
-D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string:
+D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string:
 
 jni/com_googlecode_tesseract_android/src/ccmain/cube_reco_context.h:
 
 jni/com_googlecode_tesseract_android/src/neural_networks/runtime\neural_net.h:
 
-D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector:
+D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector:
 
 jni/com_googlecode_tesseract_android/src/neural_networks/runtime/neuron.h:
 
@@ -188,7 +188,7 @@ jni/com_googlecode_tesseract_android/src/cube/tuning_params.h:
 
 jni/com_googlecode_tesseract_android/src/cube/char_set.h:
 
-D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
+D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
 
 jni/com_googlecode_tesseract_android/src/cube/string_32.h:
 
@@ -422,11 +422,11 @@ jni/com_googlecode_tesseract_android/src/textord/bbgrid.h:
 
 jni/com_googlecode_tesseract_android/src/ccutil\hashfn.h:
 
-D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_map:
+D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_map:
 
-D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_set:
+D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_set:
 
-D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\memory:
+D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\memory:
 
 jni/com_googlecode_tesseract_android/src/ccstruct\blobbox.h:
 

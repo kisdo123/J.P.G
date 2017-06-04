@@ -2,3 +2,4 @@ build/
 etc(Not project file)/
 gradle/
 J.P.G.iml
+local.properties

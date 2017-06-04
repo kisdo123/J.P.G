@@ -1,12 +1,12 @@
 ./obj/local/armeabi/objs/tess/src/cube/char_samp.o: \
   jni/com_googlecode_tesseract_android/src/cube/char_samp.cpp \
-  D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string \
+  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string \
   jni/com_googlecode_tesseract_android/src/cube/char_samp.h \
   jni/com_googlecode_tesseract_android/src/cube/bmp_8.h \
   jni/com_googlecode_tesseract_android/src/cube/con_comp.h \
   jni/com_googlecode_tesseract_android/src/cube/cached_file.h \
   jni/com_googlecode_tesseract_android/src/cube/string_32.h \
-  D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
+  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
   jni/com_googlecode_tesseract_android/src/cube/cube_utils.h \
   jni/com_googlecode_leptonica_android/src/src\allheaders.h \
   jni/com_googlecode_leptonica_android/src/src/alltypes.h \
@@ -54,7 +54,7 @@
   jni/com_googlecode_tesseract_android/src/ccutil/unicharmap.h \
   jni/com_googlecode_tesseract_android/src/cube/cube_const.h
 
-D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string:
+D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string:
 
 jni/com_googlecode_tesseract_android/src/cube/char_samp.h:
 
@@ -66,7 +66,7 @@ jni/com_googlecode_tesseract_android/src/cube/cached_file.h:
 
 jni/com_googlecode_tesseract_android/src/cube/string_32.h:
 
-D:/Androidsdk/android-ndk-r14b/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
+D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
 
 jni/com_googlecode_tesseract_android/src/cube/cube_utils.h:
 
