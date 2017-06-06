@@ -1,6 +1,6 @@
 ./obj/local/arm64-v8a/objs/tess/src/cube/char_bigrams.o: \
   jni/com_googlecode_tesseract_android/src/cube/char_bigrams.cpp \
-  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
+  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
   jni/com_googlecode_tesseract_android/src/cube/char_bigrams.h \
   jni/com_googlecode_tesseract_android/src/cube/char_set.h \
   jni/com_googlecode_tesseract_android/src/cube/string_32.h \
@@ -54,7 +54,7 @@
   jni/com_googlecode_tesseract_android/src/cube/con_comp.h \
   jni/com_googlecode_tesseract_android/src/cube/cached_file.h
 
-D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
+C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
 
 jni/com_googlecode_tesseract_android/src/cube/char_bigrams.h:
 

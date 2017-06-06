@@ -16,8 +16,8 @@ import java.io.File;
 
 public class OcrActivity extends AppCompatActivity {
     private TextView textView;
-    private Button button;
-    private Button button2;
+    private Button buttontrans;
+    private Button buttonfinish;
     private TessTwo doOCR;
     private PptBuilder ppt;
     private Intent getPintent;
@@ -28,10 +28,10 @@ public class OcrActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ocr);
-        textView = (TextView) findViewById(R.id.textView1);
+        textView = (TextView) findViewById(R.id.textView);
         textView.setMovementMethod(new ScrollingMovementMethod());
-        button = (Button) findViewById(R.id.button1);
-        button2 = (Button) findViewById(R.id.button3);
+        buttontrans = (Button) findViewById(R.id.button_trans);
+        buttonfinish = (Button) findViewById(R.id.button_finish);
         getPintent = getIntent();
         imagePath = getPintent.getExtras().getString("ImagePath");
         ocrProcessing();
@@ -39,7 +39,7 @@ public class OcrActivity extends AppCompatActivity {
     }
 
     private void ocrProcessing() {
-        button.setOnClickListener(new View.OnClickListener() {
+        buttontrans.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 doOCR = new TessTwo(OcrActivity.this);
@@ -57,7 +57,7 @@ public class OcrActivity extends AppCompatActivity {
     }
 
     private void pptProcessing() {
-        button2.setOnClickListener(new View.OnClickListener() {
+        buttonfinish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
@@ -65,8 +65,8 @@ public class OcrActivity extends AppCompatActivity {
                     File dir = new File (sdCard.getAbsolutePath() + "/J.P.G");
                     dir.mkdirs();
                     ppt = new PptBuilder();
-                    Log.d("CheckPoint4_1", "PptBuilder 생성: " + (ppt != null));
-                    ppt.MakeSlideLayout(temp, Environment.getExternalStorageDirectory().getAbsolutePath() + "/J.P.G/");
+                    Log.d("CheckPoint5", "PptBuilder 생성: " + (ppt != null));
+                    ppt.MakeSlideLayout(temp, Environment.getExternalStorageDirectory().getAbsolutePath() + "/J.P.G/", imagePath);
                     moveTaskToBack(true);
                     finish();
                     android.os.Process.killProcess(android.os.Process.myPid());

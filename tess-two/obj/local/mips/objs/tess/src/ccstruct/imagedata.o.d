@@ -21,7 +21,7 @@
   jni/com_googlecode_tesseract_android/src/ccutil\tprintf.h \
   jni/com_googlecode_tesseract_android/src/ccutil/params.h \
   jni/com_googlecode_tesseract_android/src/viewer\svutil.h \
-  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string \
+  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string \
   jni/com_googlecode_leptonica_android/src/src\allheaders.h \
   jni/com_googlecode_leptonica_android/src/src/alltypes.h \
   jni/com_googlecode_leptonica_android/src/src/endianness.h \
@@ -51,7 +51,7 @@
   jni/com_googlecode_tesseract_android/src/ccstruct/boxread.h \
   jni/com_googlecode_tesseract_android/src/cutil\callcpp.h \
   jni/com_googlecode_tesseract_android/src/ccutil\unichar.h \
-  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\thread
+  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\thread
 
 jni/com_googlecode_tesseract_android/src/ccstruct/imagedata.h:
 
@@ -95,7 +95,7 @@ jni/com_googlecode_tesseract_android/src/ccutil/params.h:
 
 jni/com_googlecode_tesseract_android/src/viewer\svutil.h:
 
-D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string:
+C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string:
 
 jni/com_googlecode_leptonica_android/src/src\allheaders.h:
 
@@ -155,4 +155,4 @@ jni/com_googlecode_tesseract_android/src/cutil\callcpp.h:
 
 jni/com_googlecode_tesseract_android/src/ccutil\unichar.h:
 
-D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\thread:
+C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\thread:

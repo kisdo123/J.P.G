@@ -1,6 +1,6 @@
 ./obj/local/x86_64/objs/tess/src/classify/errorcounter.o: \
   jni/com_googlecode_tesseract_android/src/classify/errorcounter.cpp \
-  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\ctime \
+  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\ctime \
   jni/com_googlecode_tesseract_android/src/classify/errorcounter.h \
   jni/com_googlecode_tesseract_android/src/ccutil\genericvector.h \
   jni/com_googlecode_tesseract_android/src/ccutil/tesscallback.h \
@@ -62,7 +62,7 @@
   jni/com_googlecode_tesseract_android/src/classify/trainingsampleset.h \
   jni/com_googlecode_tesseract_android/src/ccutil\indexmapbidi.h
 
-D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\ctime:
+C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\ctime:
 
 jni/com_googlecode_tesseract_android/src/classify/errorcounter.h:
 

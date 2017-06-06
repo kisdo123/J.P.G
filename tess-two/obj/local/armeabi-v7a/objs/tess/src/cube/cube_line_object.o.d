@@ -1,6 +1,6 @@
 ./obj/local/armeabi-v7a/objs/tess/src/cube/cube_line_object.o: \
   jni/com_googlecode_tesseract_android/src/cube/cube_line_object.cpp \
-  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
+  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
   jni/com_googlecode_tesseract_android/src/cube/cube_line_object.h \
   jni/com_googlecode_tesseract_android/src/ccmain\cube_reco_context.h \
   jni/com_googlecode_tesseract_android/src/neural_networks/runtime\neural_net.h \
@@ -112,7 +112,7 @@
   jni/com_googlecode_tesseract_android/src/ccstruct\params_training_featdef.h \
   jni/com_googlecode_tesseract_android/src/cube/tess_lang_mod_edge.h
 
-D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
+C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
 
 jni/com_googlecode_tesseract_android/src/cube/cube_line_object.h:
 

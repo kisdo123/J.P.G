@@ -13,17 +13,19 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import static capstone.android.R.id.btn_cam;
+import static capstone.android.R.id.btn_change;
+import static capstone.android.R.id.btn_gallery;
+
 public class MainActivity extends AppCompatActivity {
 
     private BackPressCloseHandler backPressCloseHandler;
     private static int PICK_IMAGE_REQUEST = 1;
-    private Cursor cur = null;
     private String ImagePath = null;
-    static final String TAG = "MainActivity";
     ImageView imgView;
-    Button btn_gallery;
-    Button btn_cam;
-    Button btn_change;
+    Button btngallery;
+    Button btncam;
+    Button btnchange;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,8 +38,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void gallery() {
-        btn_gallery = (Button) findViewById(R.id.btn_gallery);
-        btn_gallery.setOnClickListener(new View.OnClickListener() {
+        btngallery = (Button) findViewById(btn_gallery);
+        btngallery.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
@@ -47,8 +49,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
     private void Cam(){
-        btn_cam = (Button)findViewById(R.id.btn_cam);
-        btn_cam.setOnClickListener(new View.OnClickListener(){
+        btncam = (Button)findViewById(btn_cam);
+        btncam.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 Intent intent = new Intent(MainActivity.this, CaptureActivity.class);
@@ -58,8 +60,8 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void Change(){
-        btn_change = (Button)findViewById(R.id.btn_change);
-        btn_change.setOnClickListener(new View.OnClickListener(){
+        btnchange = (Button)findViewById(btn_change);
+        btnchange.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v){
                 Intent intent = new Intent(MainActivity.this, OcrActivity.class);
@@ -84,14 +86,14 @@ public class MainActivity extends AppCompatActivity {
                 imgView = (ImageView) findViewById(R.id.imageView);
                 imgView.setImageBitmap(scaled);
 
-                Toast.makeText(this, "이미지 선택 완료", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "이미지 선택 완료", Toast.LENGTH_SHORT).show();
 
             } else {
-                Toast.makeText(this, "취소되었습니다.", Toast.LENGTH_LONG).show();
+                Toast.makeText(this, "취소되었습니다.", Toast.LENGTH_SHORT).show();
             }
 
         } catch (Exception e) {
-            Toast.makeText(this, "불러오지 못했습니다.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "불러오지 못했습니다.", Toast.LENGTH_SHORT).show();
             e.printStackTrace();
         }
     }

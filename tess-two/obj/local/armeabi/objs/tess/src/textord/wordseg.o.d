@@ -62,9 +62,9 @@
   jni/com_googlecode_tesseract_android/src/cutil/const.h \
   jni/com_googlecode_tesseract_android/src/textord/bbgrid.h \
   jni/com_googlecode_tesseract_android/src/ccutil\hashfn.h \
-  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_map \
-  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_set \
-  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\memory \
+  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_map \
+  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_set \
+  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\memory \
   jni/com_googlecode_leptonica_android/src/src\allheaders.h \
   jni/com_googlecode_leptonica_android/src/src/alltypes.h \
   jni/com_googlecode_leptonica_android/src/src/endianness.h \
@@ -219,11 +219,11 @@ jni/com_googlecode_tesseract_android/src/textord/bbgrid.h:
 
 jni/com_googlecode_tesseract_android/src/ccutil\hashfn.h:
 
-D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_map:
+C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_map:
 
-D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_set:
+C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_set:
 
-D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\memory:
+C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\memory:
 
 jni/com_googlecode_leptonica_android/src/src\allheaders.h:
 

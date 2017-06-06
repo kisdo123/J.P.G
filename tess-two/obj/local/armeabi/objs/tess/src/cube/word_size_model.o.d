@@ -1,14 +1,14 @@
 ./obj/local/armeabi/objs/tess/src/cube/word_size_model.o: \
   jni/com_googlecode_tesseract_android/src/cube/word_size_model.cpp \
-  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string \
-  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector \
+  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string \
+  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector \
   jni/com_googlecode_tesseract_android/src/cube/word_size_model.h \
   jni/com_googlecode_tesseract_android/src/cube/char_samp.h \
   jni/com_googlecode_tesseract_android/src/cube/bmp_8.h \
   jni/com_googlecode_tesseract_android/src/cube/con_comp.h \
   jni/com_googlecode_tesseract_android/src/cube/cached_file.h \
   jni/com_googlecode_tesseract_android/src/cube/string_32.h \
-  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
+  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
   jni/com_googlecode_tesseract_android/src/cube/char_set.h \
   jni/com_googlecode_tesseract_android/src/ccutil\tessdatamanager.h \
   jni/com_googlecode_tesseract_android/src/ccutil/host.h \
@@ -56,9 +56,9 @@
   jni/com_googlecode_leptonica_android/src/src/watershed.h \
   jni/com_googlecode_tesseract_android/src/cutil\const.h
 
-D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string:
+C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string:
 
-D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector:
+C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector:
 
 jni/com_googlecode_tesseract_android/src/cube/word_size_model.h:
 
@@ -72,7 +72,7 @@ jni/com_googlecode_tesseract_android/src/cube/cached_file.h:
 
 jni/com_googlecode_tesseract_android/src/cube/string_32.h:
 
-D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
+C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
 
 jni/com_googlecode_tesseract_android/src/cube/char_set.h:
 

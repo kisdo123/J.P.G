@@ -1,8 +1,8 @@
 ./obj/local/armeabi/objs/tess/src/api/baseapi.o: \
   jni/com_googlecode_tesseract_android/src/api/baseapi.cpp \
-  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iostream \
-  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iterator \
-  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\fstream \
+  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iostream \
+  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iterator \
+  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\fstream \
   jni/com_googlecode_leptonica_android/src/src\allheaders.h \
   jni/com_googlecode_leptonica_android/src/src/alltypes.h \
   jni/com_googlecode_leptonica_android/src/src/endianness.h \
@@ -105,9 +105,9 @@
   jni/com_googlecode_tesseract_android/src/cutil/const.h \
   jni/com_googlecode_tesseract_android/src/textord/bbgrid.h \
   jni/com_googlecode_tesseract_android/src/ccutil\hashfn.h \
-  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_map \
-  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_set \
-  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\memory \
+  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_map \
+  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_set \
+  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\memory \
   jni/com_googlecode_tesseract_android/src/ccstruct\blobbox.h \
   jni/com_googlecode_tesseract_android/src/textord/gap_map.h \
   jni/com_googlecode_tesseract_android/src/wordrec\wordrec.h \
@@ -163,11 +163,11 @@
   jni/com_googlecode_tesseract_android/src/api/renderer.h \
   jni/com_googlecode_tesseract_android/src/opencl\openclwrapper.h
 
-D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iostream:
+C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iostream:
 
-D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iterator:
+C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\iterator:
 
-D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\fstream:
+C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\fstream:
 
 jni/com_googlecode_leptonica_android/src/src\allheaders.h:
 
@@ -373,11 +373,11 @@ jni/com_googlecode_tesseract_android/src/textord/bbgrid.h:
 
 jni/com_googlecode_tesseract_android/src/ccutil\hashfn.h:
 
-D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_map:
+C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_map:
 
-D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_set:
+C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\unordered_set:
 
-D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\memory:
+C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\memory:
 
 jni/com_googlecode_tesseract_android/src/ccstruct\blobbox.h:
 

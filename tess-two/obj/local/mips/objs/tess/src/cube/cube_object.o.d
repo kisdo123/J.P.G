@@ -2,12 +2,12 @@
   jni/com_googlecode_tesseract_android/src/cube/cube_object.cpp \
   jni/com_googlecode_tesseract_android/src/cube/cube_object.h \
   jni/com_googlecode_tesseract_android/src/cube/char_samp.h \
-  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string \
+  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string \
   jni/com_googlecode_tesseract_android/src/cube/bmp_8.h \
   jni/com_googlecode_tesseract_android/src/cube/con_comp.h \
   jni/com_googlecode_tesseract_android/src/cube/cached_file.h \
   jni/com_googlecode_tesseract_android/src/cube/string_32.h \
-  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
+  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
   jni/com_googlecode_tesseract_android/src/cube/word_altlist.h \
   jni/com_googlecode_tesseract_android/src/cube/altlist.h \
   jni/com_googlecode_tesseract_android/src/cube/cube_utils.h \
@@ -117,7 +117,7 @@ jni/com_googlecode_tesseract_android/src/cube/cube_object.h:
 
 jni/com_googlecode_tesseract_android/src/cube/char_samp.h:
 
-D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string:
+C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string:
 
 jni/com_googlecode_tesseract_android/src/cube/bmp_8.h:
 
@@ -127,7 +127,7 @@ jni/com_googlecode_tesseract_android/src/cube/cached_file.h:
 
 jni/com_googlecode_tesseract_android/src/cube/string_32.h:
 
-D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
+C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
 
 jni/com_googlecode_tesseract_android/src/cube/word_altlist.h:
 

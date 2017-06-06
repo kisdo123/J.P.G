@@ -73,7 +73,7 @@
   jni/com_googlecode_tesseract_android/src/classify/featdefs.h \
   jni/com_googlecode_tesseract_android/src/ccstruct\imagedata.h \
   jni/com_googlecode_tesseract_android/src/viewer\svutil.h \
-  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string \
+  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string \
   jni/com_googlecode_tesseract_android/src/classify/intfx.h \
   jni/com_googlecode_tesseract_android/src/classify/picofeat.h
 
@@ -223,7 +223,7 @@ jni/com_googlecode_tesseract_android/src/ccstruct\imagedata.h:
 
 jni/com_googlecode_tesseract_android/src/viewer\svutil.h:
 
-D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string:
+C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string:
 
 jni/com_googlecode_tesseract_android/src/classify/intfx.h:
 

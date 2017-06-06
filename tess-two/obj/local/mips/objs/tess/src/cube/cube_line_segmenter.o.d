@@ -2,9 +2,9 @@
   jni/com_googlecode_tesseract_android/src/cube/cube_line_segmenter.cpp \
   jni/com_googlecode_tesseract_android/src/cube/cube_line_segmenter.h \
   jni/com_googlecode_tesseract_android/src/ccmain\cube_reco_context.h \
-  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string \
+  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string \
   jni/com_googlecode_tesseract_android/src/neural_networks/runtime\neural_net.h \
-  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector \
+  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector \
   jni/com_googlecode_tesseract_android/src/neural_networks/runtime/neuron.h \
   jni/com_googlecode_tesseract_android/src/neural_networks/runtime/input_file_buffer.h \
   jni/com_googlecode_tesseract_android/src/cube\lang_model.h \
@@ -12,7 +12,7 @@
   jni/com_googlecode_tesseract_android/src/cube/cube_tuning_params.h \
   jni/com_googlecode_tesseract_android/src/cube/tuning_params.h \
   jni/com_googlecode_tesseract_android/src/cube/char_set.h \
-  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
+  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
   jni/com_googlecode_tesseract_android/src/cube/string_32.h \
   jni/com_googlecode_tesseract_android/src/ccutil\tessdatamanager.h \
   jni/com_googlecode_tesseract_android/src/ccutil/host.h \
@@ -75,11 +75,11 @@ jni/com_googlecode_tesseract_android/src/cube/cube_line_segmenter.h:
 
 jni/com_googlecode_tesseract_android/src/ccmain\cube_reco_context.h:
 
-D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string:
+C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string:
 
 jni/com_googlecode_tesseract_android/src/neural_networks/runtime\neural_net.h:
 
-D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector:
+C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector:
 
 jni/com_googlecode_tesseract_android/src/neural_networks/runtime/neuron.h:
 
@@ -95,7 +95,7 @@ jni/com_googlecode_tesseract_android/src/cube/tuning_params.h:
 
 jni/com_googlecode_tesseract_android/src/cube/char_set.h:
 
-D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
+C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
 
 jni/com_googlecode_tesseract_android/src/cube/string_32.h:
 
