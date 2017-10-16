@@ -12,7 +12,8 @@ IDE
 프로그램 기능
 >OCR,OOXML
 
-using the libraries
->tess-two	https://github.com/rmtheis/tess-two
-
->Jpresentation  http://www.independentsoft.de/index.html
+Used Library
+>tess-two	https://github.com/rmtheis/tess-two  
+>TedBottomPicker https://github.com/ParkSangGwon/TedBottomPicker  
+>opencv https://opencv.org/platforms/android/  
+>Jpresentation  http://www.independentsoft.de/index.html  
