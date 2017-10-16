@@ -1,1 +1,2 @@
-include ':app', ':tess-two', ':jpresentation-1.0'
+include ':app', ':tess-two', ':tedbottompicker'
+include ':openCVLibrary330'

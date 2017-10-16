@@ -96,7 +96,7 @@
   jni/com_googlecode_tesseract_android/src/classify/ocrfeatures.h \
   jni/com_googlecode_tesseract_android/src/ccstruct\imagedata.h \
   jni/com_googlecode_tesseract_android/src/viewer\svutil.h \
-  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string \
+  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string \
   jni/com_googlecode_tesseract_android/src/classify/intmatcher.h \
   jni/com_googlecode_tesseract_android/src/classify/cutoffs.h \
   jni/com_googlecode_tesseract_android/src/ccstruct\linlsq.h \
@@ -300,7 +300,7 @@ jni/com_googlecode_tesseract_android/src/ccstruct\imagedata.h:
 
 jni/com_googlecode_tesseract_android/src/viewer\svutil.h:
 
-C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string:
+D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string:
 
 jni/com_googlecode_tesseract_android/src/classify/intmatcher.h:
 

@@ -5,8 +5,8 @@
   jni/com_googlecode_tesseract_android/src/cube/char_altlist.h \
   jni/com_googlecode_tesseract_android/src/cube/altlist.h \
   jni/com_googlecode_tesseract_android/src/cube/cube_utils.h \
-  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector \
-  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string \
+  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector \
+  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string \
   jni/com_googlecode_leptonica_android/src/src\allheaders.h \
   jni/com_googlecode_leptonica_android/src/src/alltypes.h \
   jni/com_googlecode_leptonica_android/src/src/endianness.h \
@@ -35,7 +35,7 @@
   jni/com_googlecode_leptonica_android/src/src/watershed.h \
   jni/com_googlecode_tesseract_android/src/cutil\const.h \
   jni/com_googlecode_tesseract_android/src/cube/char_set.h \
-  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
+  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
   jni/com_googlecode_tesseract_android/src/cube/string_32.h \
   jni/com_googlecode_tesseract_android/src/ccutil\tessdatamanager.h \
   jni/com_googlecode_tesseract_android/src/ccutil/host.h \
@@ -83,9 +83,9 @@ jni/com_googlecode_tesseract_android/src/cube/altlist.h:
 
 jni/com_googlecode_tesseract_android/src/cube/cube_utils.h:
 
-C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector:
+D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\vector:
 
-C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string:
+D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\string:
 
 jni/com_googlecode_leptonica_android/src/src\allheaders.h:
 
@@ -143,7 +143,7 @@ jni/com_googlecode_tesseract_android/src/cutil\const.h:
 
 jni/com_googlecode_tesseract_android/src/cube/char_set.h:
 
-C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
+D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
 
 jni/com_googlecode_tesseract_android/src/cube/string_32.h:
 

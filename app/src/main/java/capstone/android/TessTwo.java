@@ -5,14 +5,16 @@ import android.content.res.AssetManager;
 import android.graphics.Bitmap;
 import android.os.Environment;
 import android.util.Log;
-
 import com.googlecode.tesseract.android.TessBaseAPI;
-
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+
+import static com.googlecode.tesseract.android.TessBaseAPI.*;
+import static com.googlecode.tesseract.android.TessBaseAPI.PageSegMode.*;
 
 /** Created by User on 2017-05-14.
  *The following notes are referenced in the URL : http://www.thecodecity.com/2016/09/creating-ocr-android-app-using-tesseract.html
@@ -30,45 +32,84 @@ mTessOCR = new TessOCR(MainActivity.this); //-> 객체 생성 꼭 MainActivity �
 String temp = mTessOCR.getOCRResult(bitmap); //-> ocr 함수, bitmap이 인자로 필요
 */
 public class TessTwo {
-    private String datapath;
+    private final String TAG = "TessTwoCheck";
+    private final String datapath;
+    private ArrayList<String> strings;
     private TessBaseAPI mTess;
     Context context;
 
     public TessTwo(Context context) {
         // TODO Auto-generated constructor stub
         this.context = context;
-        datapath = Environment.getExternalStorageDirectory() + "/ocrctz/";
-        File dir = new File(datapath + "/tessdata/");
-        Log.d("CheckPoint3","tessdata파일경로 :"+dir.getPath());
+        this.datapath = Environment.getExternalStorageDirectory() + "/ocrctz/";
+        this.mTess = new TessBaseAPI();
+        this.strings = new ArrayList<String>();
+    }
+    public void checktessdata(){
+        File dir = new File(this.datapath + "tessdata/");
+        Log.d(TAG+" 1","tessdata파일경로 :"+dir.getPath());
         File[] File = new File[2];
-        File[0] = new File(datapath + "/tessdata/" + "eng.traineddata");
-        File[1] = new File(datapath + "/tessdata/" + "kor.traineddata");
+        File[0] = new File(this.datapath + "tessdata/" + "eng.traineddata");
+        File[1] = new File(this.datapath + "tessdata/" + "kor.traineddata");
         for(int i=0;i<2;i++)
         {
-            if (!File[i].exists()) {
-                Log.d("mylog", "in file doesn't exist");
+            if (!dir.exists()) {
+                Log.d(TAG+" 1-1", "in file doesn't exist");
                 dir.mkdirs();
-                copyFile(context,File[i].getName());
+                copyFile(this.context, File[i].getName());
             } else{
-                Log.d("mylog","dir 생성 오류");
+                if(!File[i].exists()) {
+                    copyFile(this.context, File[i].getName());
+                    Log.d(TAG+ " 1-1-1", "생성 :" + File[i].getName());
+                } else{
+                    Log.d(TAG+ " 1-1-2","이상없음");
+                }
+
             }
         }
-        mTess = new TessBaseAPI();
-        String language = "eng+kor";
-        mTess.init(datapath, language);//Auto only
-        mTess.setPageSegMode(TessBaseAPI.PageSegMode.PSM_AUTO_ONLY);
+    }
+    public void tessTwoInit(String language,int psmMode, int ocrMode){
+        checktessdata();
+        if(ocrMode > 0){
+            this.mTess.init(this.datapath, language, OEM_TESSERACT_ONLY);
+        } else {
+            this.mTess.init(this.datapath, language, OEM_DEFAULT);
+        }
+        setPsgMode(psmMode);
     }
 
+    public void tessTwoEnd(){
+        this.mTess.end();
+    }
+    public ArrayList<String> getOCRResult(ArrayList<Bitmap> convertbitmap) {
+        Log.d(TAG+"1","convertbitmap size"+ convertbitmap.size());
+        for(int i=0;i<convertbitmap.size();i++){
+            mTess.setImage(convertbitmap.get(i));
+            this.strings.add(mTess.getUTF8Text());
+        }
+        return this.strings;
+    }
+
+    private void setPsgMode(int i){
+        switch(i){
+            case 0: mTess.setPageSegMode(PSM_AUTO); break;
+            case 1: mTess.setPageSegMode(PSM_SINGLE_COLUMN); break;
+            case 2: mTess.setPageSegMode(PSM_SINGLE_BLOCK_VERT_TEXT); break;
+            case 3: mTess.setPageSegMode(PSM_SINGLE_BLOCK); break;
+            case 4: mTess.setPageSegMode(PSM_SINGLE_LINE); break;
+            case 5: mTess.setPageSegMode(PSM_SINGLE_WORD); break;
+            case 6: mTess.setPageSegMode(PSM_CIRCLE_WORD); break;
+            case 7: mTess.setPageSegMode(PSM_SINGLE_CHAR); break;
+            case 8: mTess.setPageSegMode(PSM_SPARSE_TEXT); break;
+            case 9: mTess.setPageSegMode(PSM_SPARSE_TEXT_OSD); break;
+            case 10: mTess.setPageSegMode(PSM_RAW_LINE); break;
+            default: mTess.setPageSegMode(PSM_AUTO); break;
+        }
+
+    }
     public void stopRecognition() {
         mTess.stop();
     }
-
-    public String getOCRResult(Bitmap bitmap) {
-        mTess.setImage(bitmap);
-        String result = mTess.getUTF8Text();
-        return result;
-    }
-
     public void onDestroy() {
         if (mTess != null)
             mTess.end();
@@ -88,7 +129,7 @@ public class TessTwo {
             in.close();
             out.close();
         } catch (Exception e) {
-            Log.d("mylog", "couldn't copy with the following error : " + e.toString());
+            Log.d(TAG+" 2-1", "couldn't copy with the following error : " + e.toString());
         }
     }
 }

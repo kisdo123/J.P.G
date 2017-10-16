@@ -1,6 +1,6 @@
 ./obj/local/mips/objs/tess/src/cube/conv_net_classifier.o: \
   jni/com_googlecode_tesseract_android/src/cube/conv_net_classifier.cpp \
-  C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
+  D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm \
   jni/com_googlecode_tesseract_android/src/cube/char_set.h \
   jni/com_googlecode_tesseract_android/src/cube/string_32.h \
   jni/com_googlecode_tesseract_android/src/ccutil\tessdatamanager.h \
@@ -105,7 +105,7 @@
   jni/com_googlecode_tesseract_android/src/ccstruct\params_training_featdef.h \
   jni/com_googlecode_tesseract_android/src/cube/tess_lang_mod_edge.h
 
-C:/Users/Owner/AppData/Local/Android/sdk/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
+D:/Androidsdk/sdk1/ndk-bundle/build//../sources/cxx-stl/gnu-libstdc++/4.9/include\algorithm:
 
 jni/com_googlecode_tesseract_android/src/cube/char_set.h:
 

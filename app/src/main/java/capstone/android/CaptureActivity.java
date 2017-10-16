@@ -26,6 +26,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 
 public class CaptureActivity extends AppCompatActivity {
     private static final String TAG = "CaptureActivity";
@@ -33,6 +34,7 @@ public class CaptureActivity extends AppCompatActivity {
     Camera camera;
     Context ctx;
     private Toast toast;
+    private ArrayList<String> filepath = null;
     private final static int CAMERA_FACING = Camera.CameraInfo.CAMERA_FACING_BACK;
     private AppCompatActivity mActivity;
 
@@ -156,7 +158,7 @@ public class CaptureActivity extends AppCompatActivity {
             try {
                 String fileName = String.format("%d.jpg", System.currentTimeMillis());
                 File outFile = new File("/storage/emulated/0/DCIM/Camera/", fileName);
-
+                CaptureActivity.this.filepath.add(outFile.getAbsolutePath());
                 outStream = new FileOutputStream(outFile);
                 outStream.write(data[0]);
                 outStream.flush();
@@ -212,8 +214,9 @@ public class CaptureActivity extends AppCompatActivity {
 
 
     public void onClick_back(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+        Intent intent = new Intent();
+        intent.putExtra("camfilepath",this.filepath);
+        setResult(RESULT_OK,intent);
         finish();
     }
 
