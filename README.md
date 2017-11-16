@@ -16,4 +16,4 @@ Used Library
 >tess-two	https://github.com/rmtheis/tess-two  
 >TedBottomPicker https://github.com/ParkSangGwon/TedBottomPicker  
 >opencv https://opencv.org/platforms/android/  
->Jpresentation  http://www.independentsoft.de/index.html  
+>Jpresentation  http://www.independentsoft.de/index.html (Trial)
