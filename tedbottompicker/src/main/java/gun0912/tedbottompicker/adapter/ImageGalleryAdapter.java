@@ -66,7 +66,6 @@ public class ImageGalleryAdapter extends RecyclerView.Adapter<ImageGalleryAdapte
 
 
             if (imageCursor != null) {
-
                 int count = 0;
                 while (imageCursor.moveToNext() && count < builder.previewMaxCount) {
                     String imageLocation = imageCursor.getString(imageCursor.getColumnIndex(MediaStore.Images.Media.DATA));
@@ -75,7 +74,6 @@ public class ImageGalleryAdapter extends RecyclerView.Adapter<ImageGalleryAdapte
                     count++;
 
                 }
-
             }
 
         } catch (Exception e) {

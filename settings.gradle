@@ -1,2 +1,2 @@
-include ':app', ':tess-two', ':tedbottompicker'
+include ':app', ':tess-two', ':tedbottompicker', ':jpresentation-1.0'
 include ':openCVLibrary330'

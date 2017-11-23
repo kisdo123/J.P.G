@@ -41,7 +41,7 @@ public class StartScreenActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_start);
         ImageView iv = new ImageView(this);
-        iv.setBackgroundResource(R.drawable.start_background);
+        iv.setBackgroundResource(R.drawable.background_loading);
         iv.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent i = new Intent(StartScreenActivity. this, MainActivity.class);

@@ -1,3 +1,23 @@
 <resources>
     <string name="app_name">J.P.G</string>
+    <string name="jpg">jpg</string>
+    <string name="convertButton">변환하기 | 편집하기</string>
+    <string name="new_photo">New Photo</string>
+    <string name="gallery">Gallery</string>
+    <string name="doConvert">변환하기</string>
+    <string name="editting">편집하기</string>
+    <string name="endButton">끝내기</string>
+    <string name="todo">TODO</string>
+    <string name="check">확인</string>
+    <string name="captureButton">사진찍기</string>
+    <string name="imageGet">사진가져오기</string>
+    <string name="convertNeddit">변환하기 | 편집하기</string>
+    <string name="jpg_logo">jpg</string>
+    <string name="new_photo_logo">New Photo</string>
+    <string name="gallery_logo">Gallery</string>
+    <string name="thumnail_image">미리보기</string>
+    <string name="croped_image">편집한파일</string>
+    <string name="ok_button">확인</string>
+    <string name="cancel_button">취소</string>
+    <string name="object_null">null</string>
 </resources>

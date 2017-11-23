@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<customized.customized.listviewgroup2.groupdata.CheckableLinearLayout  xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:baselineAligned="true"
+    android:layout_gravity="center"
+    android:descendantFocusability="blocksDescendants">
+    <ImageView
+        android:id="@+id/cus_gal_img"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_margin="0dp"
+        android:contentDescription="@string/object_null"
+        android:gravity="start"
+        android:padding="0dp"
+        android:visibility="visible"
+        app:srcCompat="@color/blank" />
+
+    <TextView
+        android:id="@+id/cus_gal_text"
+        android:layout_width="250dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_margin="0dp"
+        android:contentDescription="@string/object_null"
+        android:gravity="start"
+        android:padding="0dp"
+        android:text="@string/object_null"
+        android:visibility="visible" />
+
+    <CheckBox
+        android:id="@+id/cus_gal_chk"
+        style="@style/Widget.AppCompat.CompoundButton.CheckBox"
+        android:layout_width="50dp"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:checked="false"
+        android:duplicateParentState="false"
+        android:gravity="start"
+        android:visibility="visible" />
+</customized.customized.listviewgroup2.groupdata.CheckableLinearLayout>

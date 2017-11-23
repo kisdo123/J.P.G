@@ -102,6 +102,22 @@ public class Opencv {
         */
         return tbitmaps;
     }
+
+    public Bitmap processing0(Bitmap bitmaps){
+        this.mat = new Mat();
+        this.bitmap = bitmaps;
+        mat=bitmapTomat(this.bitmap,mat); // Bitmap을 Mat으로
+        writeImage("bitmapTomat",mat);
+        mat=rgbTogray(mat); // Gray 변환
+        writeImage("grayImage",mat);
+        mat=blurImage2(mat); // Blur 처리
+        writeImage("bluredImage",mat);
+        mat=adaptiveThreshold(mat); // adaptiveThreshold 처리
+        writeImage("binaryImage",mat);
+        this.bitmap=matTobitmap(mat);
+        Log.d(TAG+"2", "Bitmap is null:" +(this.bitmap == null));
+        return this.bitmap;
+    }
     private Context setContext(Context context){
         this.context = context;
         return this.context;

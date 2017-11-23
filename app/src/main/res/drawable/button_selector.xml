@@ -4,9 +4,9 @@
 
     <item
         android:state_pressed="true"
-        android:drawable="@color/colorPrimroseYellow" />
+        android:drawable="@color/colorGray" />
 
     <item
-        android:drawable="@color/colorblack" />
+        android:drawable="@drawable/image_button" />
 
 </selector>

@@ -30,14 +30,26 @@ import java.util.ArrayList;
 
 public class CaptureActivity extends AppCompatActivity {
     private static final String TAG = "CaptureActivity";
-    Preview preview;
-    Camera camera;
-    Context ctx;
+    private Preview preview;
+    private Camera camera;
+    private Context ctx;
     private Toast toast;
-    private ArrayList<String> filepath = null;
     private final static int CAMERA_FACING = Camera.CameraInfo.CAMERA_FACING_BACK;
     private AppCompatActivity mActivity;
+    private ArrayList<String> filepath = new ArrayList<String>();
+    private AsyncTask asyncTask;
 
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        ctx = this;
+        mActivity = this;
+
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+        setContentView(R.layout.activity_camera);
+
+    }
 
     public void startCamera() {
 
@@ -65,23 +77,11 @@ public class CaptureActivity extends AppCompatActivity {
 
             } catch (RuntimeException ex) {
                 toast.makeText(ctx, "camera_not_found " + ex.getMessage().toString(), toast.LENGTH_LONG).show();
-                Log.d(TAG, "camera_not_found " + ex.getMessage().toString());
-            }
-        }
+        Log.d(TAG, "camera_not_found " + ex.getMessage().toString());
+    }
+}
 
         preview.setCamera(camera);
-    }
-
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        ctx = this;
-        mActivity = this;
-
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON, WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
-        setContentView(R.layout.activity_camera);
-
     }
 
     @Override
@@ -106,12 +106,13 @@ public class CaptureActivity extends AppCompatActivity {
     private void resetCam() {
         startCamera();
     }
-
+    /*
     private void refreshGallery(File file) {
         Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
         mediaScanIntent.setData(Uri.fromFile(file));
         sendBroadcast(mediaScanIntent);
     }
+    */
 
     Camera.ShutterCallback shutterCallback = new Camera.ShutterCallback() {
         public void onShutter() {
@@ -149,34 +150,38 @@ public class CaptureActivity extends AppCompatActivity {
         }
     };
 
-    private class SaveImageTask extends AsyncTask<byte[], Void, Void> {
-
+    private class SaveImageTask extends AsyncTask<byte[], Void, String> {
         @Override
-        protected Void doInBackground(byte[]... data) {
+        protected String doInBackground(byte[]... data) {
             FileOutputStream outStream = null;
-
+            String s = null;
             try {
                 String fileName = String.format("%d.jpg", System.currentTimeMillis());
                 File outFile = new File("/storage/emulated/0/DCIM/Camera/", fileName);
-                CaptureActivity.this.filepath.add(outFile.getAbsolutePath());
+                s = outFile.getAbsolutePath();
                 outStream = new FileOutputStream(outFile);
                 outStream.write(data[0]);
                 outStream.flush();
                 outStream.close();
 
-                Log.d(TAG, "onPictureTaken - wrote bytes: " + data.length + " to "
-                        + outFile.getAbsolutePath());
+                Log.d(TAG, "onPictureTaken - wrote bytes: " + data.length + " to " + outFile.getAbsolutePath());
 
-                refreshGallery(outFile);
+                Intent mediaScanIntent = new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE);
+                mediaScanIntent.setData(Uri.fromFile(outFile));
+                sendBroadcast(mediaScanIntent);
             } catch (FileNotFoundException e) {
                 e.printStackTrace();
             } catch (IOException e) {
                 e.printStackTrace();
             } finally {
+                return s;
             }
-            return null;
         }
 
+        @Override
+        protected void onPostExecute(String s) {
+            CaptureActivity.this.filepath.add(s);
+        }
     }
 
     public static int setCameraDisplayOrientation(Activity activity, int cameraId, Camera camera) {
@@ -213,9 +218,14 @@ public class CaptureActivity extends AppCompatActivity {
     }
 
 
+
     public void onClick_back(View view) {
         Intent intent = new Intent();
-        intent.putExtra("camfilepath",this.filepath);
+        intent.putExtra("CabsoulteFilePaths",this.filepath);
+        Log.d(TAG," size :"+this.filepath.size());
+        for(int i=0; i<this.filepath.size();i++){
+            Log.d("CheckPoint1-1","경로 확인 : "+ this.filepath.get(i));
+        }
         setResult(RESULT_OK,intent);
         finish();
     }
@@ -228,5 +238,10 @@ public class CaptureActivity extends AppCompatActivity {
         toast = Toast.makeText(getApplicationContext(), "사진이 저장되었습니다.", Toast.LENGTH_LONG);
         toast.setGravity(Gravity.CENTER, 50, 50);
         toast.show();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }

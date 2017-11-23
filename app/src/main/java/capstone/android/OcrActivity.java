@@ -1,79 +1,75 @@
 package capstone.android;
 
-import customstorage.GridAdapter;
-import customstorage.Storage;
-import gun0912.tedbottompicker.GridSpacingItemDecoration;
+import customized.customized.background.BackgroundTessTwo;
+import customized.customized.background.CustomHandler;
+import customized.customized.listviewgroup1.ListViewAdapter;
+import customized.customized.data.Storage;
 import opencv.Opencv;
 
-import android.content.DialogInterface;
-import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
+import android.content.Intent;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.os.Environment;
-import android.support.v7.app.AlertDialog;
+import android.support.design.widget.CoordinatorLayout;
 import android.support.v7.app.AppCompatActivity;
-import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.GridView;
+import android.widget.ListView;
 import android.widget.TextView;
-/*
-import org.opencv.android.BaseLoaderCallback;
-import org.opencv.android.LoaderCallbackInterface;
-import org.opencv.android.OpenCVLoader;
-import org.opencv.core.Mat;
-*/
+import android.content.res.AssetManager;
 import org.opencv.android.BaseLoaderCallback;
 import org.opencv.android.LoaderCallbackInterface;
 import org.opencv.android.OpenCVLoader;
 import org.opencv.core.Mat;
 
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.ObjectInputStream;
+import java.io.OutputStream;
 
 public class OcrActivity extends AppCompatActivity {
-    private final String TAG = "Checkpoint";
+    private final String TAG = "OcrActivity";
+    private final String datapath = Environment.getExternalStorageDirectory() + "/ocrctz/";
     private GridView gridView;
-    private GridAdapter adapter;
-    private ArrayList<Button> buttonList = new ArrayList<>();
+    private ListViewAdapter adapter;
+    private Button[] buttonList;
     private Storage storage;
-    private TessTwo tesstwo = new TessTwo(OcrActivity.this);
-    private ArrayList<String> strings= null;
-    private ArrayList<Bitmap> bitmaps = null;
+    private TextView textViewjpg;
     private PptBuilder ppt;
     private Opencv opencv;
-    private BaseLoaderCallback mLoaderCallback = new BaseLoaderCallback(this) {
-        @Override
-        public void onManagerConnected(int status) {
-            switch (status) {
-                case LoaderCallbackInterface.SUCCESS:
-                {
-                    Log.i("OpenCV", "OpenCV loaded successfully");
-                    OcrActivity.this.opencv = new Opencv(OcrActivity.this,new Mat());
-                } break;
-                default:
-                {
-                    super.onManagerConnected(status);
-                } break;
-            }
-        }
-    };
-
-    private String temp;
-    private static int psgmode,ocrmode;
+    private BaseLoaderCallback mLoaderCallback;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ocr);
+
+        this.mLoaderCallback =new BaseLoaderCallback(this) {
+            @Override
+            public void onManagerConnected(int status) {
+                switch (status) {
+                    case LoaderCallbackInterface.SUCCESS:
+                    {
+                        Log.i(TAG, "OpenCV loaded successfully");
+                        OcrActivity.this.opencv = new Opencv(OcrActivity.this,new Mat());
+                    } break;
+                    default:
+                    {
+                        super.onManagerConnected(status);
+                    } break;
+                }
+            }
+        };
         setting();
         ocrProcessing();
         pptProcessing();
-        editting();
+        crop();
     }
+
     public void onResume()
     {
         super.onResume();
@@ -85,61 +81,106 @@ public class OcrActivity extends AppCompatActivity {
             mLoaderCallback.onManagerConnected(LoaderCallbackInterface.SUCCESS);
         }
     }
+
     private void setting() {
         this.gridView = (GridView) findViewById(R.id.grid_text);
-        this.storage  = (Storage)getIntent().getSerializableExtra("customstorage");
+        try{
+            this.storage  = getStorage();
+        } catch (Exception e){
+            e.printStackTrace();
+            Log.d(TAG+19,"error :" + e.toString());
+        }
         this.opencv = new Opencv(OcrActivity.this);
-        this.tesstwo = new TessTwo(OcrActivity.this);
-        this.bitmaps = new ArrayList<>();
-        this.buttonList.add((Button)findViewById(R.id.button_trans));
-        this.buttonList.add((Button)findViewById(R.id.button_finish));
-        this.buttonList.add((Button)findViewById(R.id.button_editing));
-        Log.d("OcrActivity0",
-                "storage :"+this.storage.toString()+"\n"+
-                        "buttonlist(1) :"+this.buttonList.get(0).toString()+"\n"+
-                        "buttonlist(2) :"+this.buttonList.get(1).toString()+"\n"+
-                        "gridView :"+this.gridView.toString()+"\n"
-
-        );
+        this.textViewjpg = (TextView)findViewById(R.id.textView_jpg);
+        this.buttonList = new Button[]{(Button)findViewById(R.id.button_trans),(Button)findViewById(R.id.button_finish),(Button)findViewById(R.id.button_editing)};
+        Log.d(TAG,"buttonList :"+(buttonList!=null));
+        Typeface typeFace_eng = Typeface.createFromAsset(getAssets(), "fonts/cour.ttf");
+        Typeface typeFace_kor = Typeface.createFromAsset(getAssets(), "fonts/NanumGothic.ttf");
+        this.textViewjpg.setTypeface(typeFace_eng);
+        this.buttonList[0].setTypeface(typeFace_kor);
+        this.buttonList[1].setTypeface(typeFace_kor);
+        this.buttonList[2].setTypeface(typeFace_kor);
+        checkJPGdir();
+        checktessdata();
     }
 
+    //start는 스레드를 새로 만든 뒤  stack에다가 새로 추가하는것, run은 현재 스레드에서 바로 동작
     private void ocrProcessing() {
-        buttonList.get(0).setOnClickListener(new View.OnClickListener() {
+        buttonList[0].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                try {
-                    tesstwo.tessTwoInit("eng+kor",ocrmode,psgmode);
-                    Log.d(TAG+"3", "opencv 생성 확인 :" + "\nopencv 생성: " + (ppt==null));
-                    Log.d(TAG+"3_1", "storage size :" +storage.getSize());
-                    for(int i=0;i<storage.getSize();i++){
-                        Log.d(TAG+"4", "받은 이미지 값 확인 :" + storage.getApath(i));
-                        OcrActivity.this.bitmaps.add(BitmapFactory.decodeFile(storage.getApath(i)));
-                        Log.d(TAG+"5", "만든 bitmap "+i+" 값 확인 :" + (OcrActivity.this.bitmaps.get(i) == null));
+                //OcrActivity.this.storage.setPictureImage(0,(OcrActivity.this.opencv.processing0(OcrActivity.this.storage.getPictureImage(0))));
+                TempValue[] tempValues = new TempValue[14];
+                CustomHandler customHandler = new CustomHandler();
+                TessTwo tessTwo[] = new TessTwo[14];
+                BackgroundTessTwo[] backgroundTessTwos = new BackgroundTessTwo[14];
+                int endCount = 0;
+                try{
+                    for(int j=0;j<OcrActivity.this.storage.getSize();j++){
+                        for(int i=0;i<14;i++){
+                            tempValues[i] = new TempValue();
+                            tessTwo[i] = new TessTwo(OcrActivity.this.datapath,"eng+kor",i);
+                            backgroundTessTwos[i] = new BackgroundTessTwo(tempValues[i],customHandler,tessTwo[i],OcrActivity.this.storage.getPictureImage(j),i);
+                            backgroundTessTwos[i].setDaemon(true);
+                            backgroundTessTwos[i].start();
+                        }
+                        try{
+                            for(int t=0;t<14;t++){
+                                backgroundTessTwos[t].join();
+                            }
+                        } catch (Exception e){
+                            e.printStackTrace();
+                        }
+
+                        while(true){
+                            for(int t=0;t<14;t++){
+                                if(backgroundTessTwos[t].getState()==Thread.State.TERMINATED){
+                                    endCount = endCount +1;
+                                    Log.d(TAG,"end count :" + endCount);
+                                }
+                            }
+                            if(endCount == 14){
+                                Log.d(TAG,"exit while(true)");
+                                for(int i=0;i<14;i++){
+                                    //Log.d(TAG," mVar.ocrtemptext :"+tempValues[i].ocrReuslt +"mVar.ocrconfidence :"+tempValues[i].confidence);
+                                    tessTwo[i].tessTwoEnd();
+                                    endCount = 0;
+                                }
+                                break;
+                            }
+                        }
+
+
+                        OcrActivity.this.storage.setConfidence(j,tempValues[0].confidence);
+                        for(int i=0;i<14;i++) {
+                            if (tempValues[i].confidence >= OcrActivity.this.storage.getConfidence(j)){
+                                OcrActivity.this.storage.setConfidence(j, tempValues[i].confidence);
+                                OcrActivity.this.storage.setOcrResultText(j, tempValues[i].ocrReuslt);
+                            }
+                        }
+                        Log.d(TAG,"Storage's high confidence :" + OcrActivity.this.storage.getConfidence(j));
+                        Log.d(TAG,"storage's string :" + OcrActivity.this.storage.getOcrResultText(j));
                     }
-                    ArrayList<Bitmap> tBitmaps = new ArrayList<Bitmap>();
-                    tBitmaps.addAll(opencv.processing0(OcrActivity.this.bitmaps,-1));
-                    OcrActivity.this.strings =tesstwo.getOCRResult(tBitmaps);
-                    tesstwo.tessTwoEnd();
-                    OcrActivity.this.adapter = new GridAdapter(OcrActivity.this, OcrActivity.this.strings,-1);
-                    OcrActivity.this.gridView.setAdapter(OcrActivity.this.adapter);
-                } catch (Exception e) {
+                } catch( Exception e){
                     e.printStackTrace();
                 } finally {
-
+                    OcrActivity.this.adapter = new ListViewAdapter(OcrActivity.this, OcrActivity.this.storage,-1);
+                    OcrActivity.this.gridView.setAdapter(OcrActivity.this.adapter);
                 }
             }
         });
     }
 
     private void pptProcessing() {
-        buttonList.get(1).setOnClickListener(new View.OnClickListener() {
+        buttonList[1].setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                String pptxName = Environment.getExternalStorageDirectory().getAbsolutePath() + "/J.P.G/"+"test.pptx";
                 try {
                     checkJPGdir();
-                    ppt = new PptBuilder();
+                    ppt = new PptBuilder(OcrActivity.this.storage);
                     Log.d(TAG+"6", "PptBuilder 생성: " + (ppt != null));
-                    ppt.createPpt(temp, Environment.getExternalStorageDirectory().getAbsolutePath() + "/J.P.G/", storage.getApath(0));
+                    ppt.Type1MakeSlide(pptxName);
                     moveTaskToBack(true);
                     finish();
                     android.os.Process.killProcess(android.os.Process.myPid());
@@ -150,11 +191,13 @@ public class OcrActivity extends AppCompatActivity {
         });
     }
 
-    private void editting(){
-        buttonList.get(2).setOnClickListener(new View.OnClickListener(){
+    private void crop(){
+        buttonList[2].setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view){
-                show();
+            public void onClick(View view) {
+                Intent intent = new Intent(OcrActivity.this, CropActivity.class);
+                intent.putExtra("Storage","");
+                startActivity(intent);
             }
         });
     }
@@ -166,74 +209,75 @@ public class OcrActivity extends AppCompatActivity {
             dir.mkdirs();
         }
     }
-    private void show()
-    {
-        String[] strs = {"1,0","1,1","1,2","1,3","1,4","1,5","1,6","1,7","1,8","1,9","1,10",
-                "-1,0","-1,1","-1,2","-1,3","-1,4","-1,5","-1,6","-1,7","-1,8","-1,9","-1,10"};
-        final List<String> ListItems = new ArrayList<String>(Arrays.asList(strs));
 
-        final CharSequence[] items =  ListItems.toArray(new String[ ListItems.size()]);
+    private void checktessdata(){
 
-        final List SelectedItems  = new ArrayList();
-        int defaultItem = 0;
-        SelectedItems.add(defaultItem);
+        File dir = new File(this.datapath + "tessdata/");
+        Log.d(TAG+" 1","tessdata파일경로 :"+dir.getPath());
+        File[] File = new File[2];
+        File[0] = new File(this.datapath + "tessdata/" + "eng.traineddata");
+        File[1] = new File(this.datapath + "tessdata/" + "kor.traineddata");
+        for(int i=0;i<2;i++)
+        {
+            if (!dir.exists()) {
+                Log.d(TAG+" 1-1", "in file doesn't exist");
+                dir.mkdirs();
+                copyFile(File[i].getName());
+            } else{
+                if(!File[i].exists()) {
+                    copyFile(File[i].getName());
+                    Log.d(TAG+ " 1-1-1", "생성 :" + File[i].getName());
+                } else{
+                    Log.d(TAG+ " 1-1-2","이상없음");
+                }
 
-        final AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        builder.setTitle("AlertDialog Title");
-        builder.setSingleChoiceItems(items, defaultItem,
-                new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        SelectedItems.clear();
-                        SelectedItems.add(which);
-                    }
-                });
-        builder.setPositiveButton("Ok",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
-                        String msg="";
-                        if (!SelectedItems.isEmpty()) {
-                            int index = (int) SelectedItems.get(0);
-                            msg = ListItems.get(index);
-                        }
-                        /*Toast.makeText(getApplicationContext(),
-                                "Items Selected.\n"+ msg , Toast.LENGTH_LONG)
-                                .show();
-                                */
-                        switch(msg){
-                            case "1,0":ocrmode=1;psgmode=0;break;
-                            case "1,1":ocrmode=1;psgmode=1;break;
-                            case "1,2":ocrmode=1;psgmode=2;break;
-                            case "1,3":ocrmode=1;psgmode=3;break;
-                            case "1,4":ocrmode=1;psgmode=4;break;
-                            case "1,5":ocrmode=1;psgmode=5;break;
-                            case "1,6":ocrmode=1;psgmode=6;break;
-                            case "1,7":ocrmode=1;psgmode=7;break;
-                            case "1,8":ocrmode=1;psgmode=8;break;
-                            case "1,9":ocrmode=1;psgmode=9;break;
-                            case "1,10":ocrmode=1;psgmode=10;break;
-                            case "-1,0":ocrmode=-1;psgmode=0;break;
-                            case "-1,1":ocrmode=-1;psgmode=1;break;
-                            case "-1,2":ocrmode=-1;psgmode=2;break;
-                            case "-1,3":ocrmode=-1;psgmode=3;break;
-                            case "-1,4":ocrmode=-1;psgmode=4;break;
-                            case "-1,5":ocrmode=-1;psgmode=5;break;
-                            case "-1,6":ocrmode=-1;psgmode=6;break;
-                            case "-1,7":ocrmode=-1;psgmode=7;break;
-                            case "-1,8":ocrmode=-1;psgmode=8;break;
-                            case "-1,9":ocrmode=-1;psgmode=9;break;
-                            case "-1,10":ocrmode=-1;psgmode=10;break;
-                            default : break;
+            }
+        }
+    }
 
-                        }
-                    }
-                });
-        builder.setNegativeButton("Cancel",
-                new DialogInterface.OnClickListener() {
-                    public void onClick(DialogInterface dialog, int which) {
+    private void copyFile(String FilePath) {
+        AssetManager assetManager = OcrActivity.this.getAssets();
+        try {
+            InputStream in = assetManager.open("tessdata/"+FilePath);
+            OutputStream out = new FileOutputStream(datapath + "/tessdata/" + FilePath);
+            byte[] buffer = new byte[2048];
+            int read = in.read(buffer);
+            while (read != -1) {
+                out.write(buffer, 0, read);
+                read = in.read(buffer);
+            }
+            in.close();
+            out.close();
+        } catch (Exception e) {
+            Log.d(TAG+" 2-1", "couldn't copy with the following error : " + e.toString());
+        }
+    }
 
-                    }
-                });
-        builder.show();
+    private Storage getStorage() throws Exception{
+        FileInputStream fis = this.openFileInput("adfwe!@#as");
+        ObjectInputStream is = new ObjectInputStream(fis);
+        Storage storage = (Storage)is.readObject();
+        is.close();
+        fis.close();
+        return storage;
+    }
+
+    public class TempValue{
+        public String ocrReuslt=null;
+        public int confidence = 0;
+
+        public TempValue(){
+            this.ocrReuslt = null;
+            this.confidence = 0;
+        }
+        public void setTempValue(String string, int confidence){
+            this.ocrReuslt = string;
+            this.confidence =confidence ;
+        }
+
+        public void setTempValue(TempValue tempValue){
+            this.ocrReuslt = tempValue.ocrReuslt;
+            this.confidence = tempValue.confidence;
+        }
     }
 }

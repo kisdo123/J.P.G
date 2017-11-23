@@ -4,6 +4,8 @@
     android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/start_background">
+    android:background="@drawable/background_loading"
+    android:screenOrientation="portrait"
+    android:orientation="vertical">
 
 </FrameLayout>
