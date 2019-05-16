@@ -17,3 +17,5 @@ Used Library
 >TedBottomPicker https://github.com/ParkSangGwon/TedBottomPicker  
 >opencv https://opencv.org/platforms/android/  
 >Jpresentation  http://www.independentsoft.de/index.html (Trial)
+
+시연  : https://youtu.be/qedMBYE3KFM
